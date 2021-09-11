@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package helloworld;
+
+option java_multiple_files = true;
+option java_package = "io.github.caio.grpc";
+option java_outer_classname = "HelloWorldProto";
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc login (LoginRequest) returns (GenResponse) {}
+  rpc cTarefa (CTarefaRequest) returns (GenResponse) {}
+  rpc rTarefa (RTarefaRequest) returns (GenResponse) {}
+  rpc uTarefa (CTarefaRequest) returns (GenResponse) {}
+  rpc dTarefa (CTarefaRequest) returns (GenResponse) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloResponse {
+  string message = 1;
+}
+
+message LoginRequest{
+  string cid = 1;
+}
+
+message GenResponse {
+  string ret = 1;
+}
+
+message CTarefaRequest{
+  string cid = 1;
+  string nome = 2;
+  string desc = 3;
+}
+
+message RTarefaRequest{
+  string cid = 1;
+}
